@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    
+</head>
+<body class="bg-gray-900 text-white font-mono">
+
+    <div id="preloader">
+        <p class="loading-text">Loading... <span id="loading-percentage">0%</span></p>
+        <div class="loading-bar">
+            <div class="running-boy"></div>
+        </div>
+    </div>
+
+    <nav class="fixed top-0 w-full bg-transparent p-4 flex justify-between items-center shadow-md">
+        
+        <button id="themeToggle" class="bg-black-700 p-2 rounded flex items-center gap-2 transition duration-300 ease-in-out transform hover:scale-110 hover:bg-gray-600">
+            <span id="themeIcon"></span>
+            <span id="themeText"></span>
+        </button>
+    </nav>
+    
+    <header class="relative h-screen flex justify-center items-center text-center overflow-hidden">
+        <canvas id="heroCanvas" class="absolute top-0 left-0 w-full h-full"></canvas>
+        <div class="relative z-10 flex flex-col items-center">
+            <img src="images/pro.png" alt="Profile Picture" class="w-40 h-40 rounded-full border-4 border-blue-500">
+            <h1 class="text-5xl font-bold mt-4">Hello, I'm <span class="text-blue-500">[Nitumani Das]</span></h1>
+            <p class="text-lg text-gray-400">A Full-stack Web Developer | Freelancer | Tech Enthusiast</p>
+            <a href="#projects" class="mt-6 px-5 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition">View Projects</a>
+        </div>
+    </header>
+
+    <section id="about" class="py-16 text-center max-w-4xl mx-auto">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+            <h2 class="text-3xl font-bold">About Me</h2>
+            <p class="text-gray-400 mt-4">I am a passionate web developer with expertise in modern web technologies. I love creating dynamic and visually appealing websites. My skill set includes front-end and back-end development, and I am always eager to learn new technologies to improve my craft.</p>
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-700 p-4 rounded-lg shadow-md hover:shadow-xl transform transition duration-500 hover:scale-105 text-left">
+                    <h3 class="text-xl font-semibold text-blue-400">Current Skills</h3>
+                    <ul class="text-gray-300 mt-2 ml-4 list-disc">
+                        <li>✔️ HTML, CSS, JavaScript</li>
+                        <li>✔️ Tailwind CSS, Bootstrap</li>
+                        <li>✔️ React.js, Node.js, Express.js</li>
+                        <li>✔️ MongoDB, MySQL</li>
+                        <li>✔️ Git & GitHub</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg shadow-md hover:shadow-xl transform transition duration-500 hover:scale-105">
+                    <h3 class="text-xl font-semibold text-blue-400">Education</h3>
+                    <p class="text-gray-300 mt-2">Currently pursuing MCA (Master of Computer Applications). Passionate about coding and software development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 flex flex-col md:flex-row gap-10">
+        <div class="w-full md:w-1/2">
+            <h2 class="text-3xl text-center font-bold mb-6">Skills</h2>
+            <div class="mb-4">
+                <p class="text-lg">HTML</p>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                    <div class="progress-bar" style="--progress-width: 90%; width: 90%; background: linear-gradient(90deg, #ff5733, #ffbd69); --color: #ff5733;"></div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <p class="text-lg">CSS</p>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                    <div class="progress-bar" style="--progress-width: 85%; width: 85%; background: linear-gradient(90deg, #33ff57, #69ffbd); --color: #33ff57;"></div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <p class="text-lg">JavaScript</p>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                    <div class="progress-bar" style="--progress-width: 80%; width: 80%; background: linear-gradient(90deg, #5733ff, #bd69ff); --color: #5733ff;"></div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <p class="text-lg">React</p>
+                <div class="w-full bg-gray-700 rounded-full h-3">
+                    <div class="progress-bar" style="--progress-width: 75%; width: 75%; background: linear-gradient(90deg, #ff33c4, #ff69bd); --color: #ff33c4;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col justify-center items-center text-center">
+            <img src="/images/pro.png" alt="Profile Image" class="profile-img mb-4">
+            <h2 class="text-3xl font-bold">About Me</h2>
+            <h3 class="text-2xl text-blue-400 mt-4">[Nitumani Das]</h3>
+            <p class="text-lg mt-2 text-gray-400 typewriter">
+                <span>A passionate developer, building modern & interactive web experiences.</span>
+            </p>
+        </div>
+    </section>
+
+
+
+
+  <!--projects section -->
+    <section id="projects" class="py-16 px-6">
+        <h2 class="text-4xl font-bold text-center mb-10">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <div class="mb-4">
+                    <button class="w-full text-left text-xl font-semibold bg-gray-800 p-4 rounded hover:bg-gray-700" onclick="showProject('project1')">+ Web Development</button>
+                </div>
+                <div class="mb-4">
+                    <button class="w-full text-left text-xl font-semibold bg-gray-800 p-4 rounded hover:bg-gray-700" onclick="showProject('project2')">+ Machine Learning</button>
+                </div>
+                <div class="mb-4">
+                    <button class="w-full text-left text-xl font-semibold bg-gray-800 p-4 rounded hover:bg-gray-700" onclick="showProject('project3')">+ Mobile Apps</button>
+                </div>
+            </div>
+            <div id="projectDisplay" class="glow-box">
+                <h3 class="text-2xl font-bold">Select a project category</h3>
+                <p class="text-gray-400">Click on a category to see details.</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function showProject(project) {
+            const display = document.getElementById('projectDisplay');
+            if (project === 'project1') {
+                display.innerHTML = `<h3 class='text-2xl font-bold'>Web Development</h3>
+                                     <p class='text-gray-400'>Built modern websites with responsive design and animations.</p>
+                                     <img src='images/project.png' alt='Web Development'>`;
+            } else if (project === 'project2') {
+                display.innerHTML = `<h3 class='text-2xl font-bold'>Machine Learning</h3>
+                                     <p class='text-gray-400'>Developed AI models for data analysis and automation.</p>
+                                     <img src='images/project.png' alt='Machine Learning'>`;
+            } else if (project === 'project3') {
+                display.innerHTML = `<h3 class='text-2xl font-bold'>Mobile Apps</h3>
+                                     <p class='text-gray-400'>Designed and developed cross-platform mobile applications.</p>
+                                     <img src='images/project.png' alt='Mobile Apps'>`;
+            }
+        }
+    </script>
+
+
+    <!--social media section-->
+    
+    <section id="contact" class="py-16 text-center">
+        <h2 class="text-3xl font-bold">Contact</h2>
+        <p class="text-gray-400 mt-4">Email: nitumani492@email.com</p>
+        <div class="flex justify-center gap-6 mt-4">
+            <a href="#" class="text-blue-400 text-xl">GitHub</a>
+            <a href="#" class="text-blue-400 text-xl">LinkedIn</a>
+            <a href="#" class="text-blue-400 text-xl">Twitter</a>
+        </div>
+    </section>
+    
+    <footer class="py-4 bg-gray-800 text-center">
+        <p>&copy; 2025 nitumani das</p>
+    </footer>
+    
+    
+</body>
+</html>
